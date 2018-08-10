@@ -1,0 +1,304 @@
+
+/* === conferences home === */
+.loadingBox{
+    position: absolute;
+    top:0.1rem;
+    left:0;
+    width:100%;
+    z-index: 8888;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size:px2rem(24) !important;
+    height:px2rem(56) !important;
+    line-height:px2rem(56) !important;
+    display: block;
+    margin-top:0 !important;
+    overflow:hidden !important;
+    }
+    .icon-reload{
+    display: none;
+    }
+    .rotate{
+    display: block;
+    }
+    .icon-reload:after{
+    content: "\2193";
+    color: #313131;
+    font-size:px2rem(40) !important;
+    height:px2rem(40);
+    position: relative;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+    }
+   
+    
+.meet-body-wrapper{
+        width:100%;
+        overflow-y:scroll;
+        position: relative;
+        padding-top:1rem;
+        padding-bottom:1.2rem;
+}
+.containerWrap {
+        background:$bgColor_default;
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+  }
+
+//top nav
+.meet-head-wrapper{
+    position: fixed;
+    left:0;
+    top:px2rem(100);
+    width:100%;
+    z-index:8997;
+    height:px2rem(140);
+    // background:$bgColor_default;
+
+    & .meet-head-nav {
+        @extend %area_base1;
+        position: relative;
+        display: flex;
+        justify-content:center;
+        flex-direction:row;
+        align-items: center;
+        height:px2rem(140);
+        margin:0 px2rem(20);
+            & .nav-item {
+                flex:1;
+                display: flex;
+                flex-direction: row;
+                justify-content:center;
+                align-items: center;
+                border-right:px2rem(1) solid #f1f1f1;
+                & .nav-label{
+                    color:$fcolor_default;
+                    font-size:$f32;
+                    margin-left:px2rem(14)
+                }
+                & .icon-prefix{
+                    background:#f4f8ff;
+                    border-radius: 50%;
+                    width:px2rem(80);
+                    height:px2rem(80);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            & .nav-item:last-of-type{
+                border-right-color:#fff;
+            }
+            & .nav-item:hover{
+                text-decoration: none
+            }
+       }
+}
+
+
+  .bar-tab:after{
+    width:1px;
+    height:80px;
+    display: block;
+    background:#f1f1f1;
+    position: absolute;
+    left:49.8%;
+    top:-30px;
+}
+
+.meet-list{
+    position:relative;
+    overflow: hidden;
+}
+
+.card-container{
+    margin:0 $in_wrapper;
+    min-height:12rem;
+
+    & .card{
+        padding:px2rem(8) px2rem(30);
+        position: relative;
+        box-shadow: 0 0 px2rem(4) px2rem(5) rgba(206, 206, 206, 0.2);
+    }
+
+    & .item-title-row{
+        display: flex;
+        justify-content:center;
+        margin-top:px2rem(20);
+    }
+
+    & .iconStatus{
+       position: absolute;
+       left:px2rem(-30);
+       top:px2rem(10)
+    }
+
+    & .item-title{
+       font-size: $f32;
+       line-height:px2rem(45);
+       flex:2;
+    }
+    & .item-time{
+        font-size:$f28;
+        line-height:$f32;
+        color:$black_gray;
+        flex:1;
+        text-align: right;
+     }
+
+    & .card-footerInfo{
+        padding-bottom:px2rem(20);
+        padding-top:px2rem(8);
+
+        & .footerInfo-item{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height:px2rem(56);
+            overflow: height;
+        }
+
+        & .item-id{
+            flex:1;
+            font-size:$f28;
+            line-height:px2rem(30);
+            color:$black_gray;
+        }
+        & .item-user {
+            flex:1;
+            display: flex;
+            flex-direction:row;
+            justify-content: flex-end
+        }
+        & .userImg{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            & span{
+                margin-left:px2rem(5);
+                @extend %userHeader;
+                display: inline-block;
+                overflow: hidden;
+                border-radius:50%;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                & img{
+                   @extend %userHeader;
+                   border-radius:50%;
+                }
+            }
+         }
+
+         & .el-icon-plus-box{
+            @extend %userHeader;
+            background:#f1f1f1;
+            & .el-icon-plus{
+                font-style: normal;
+                color:#919191;
+                font-size:$f28;
+             }
+         }
+    } 
+}
+.list-block.media-list .item-inner{
+    padding: 0 !important;
+}
+
+.meet_menu{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content:flex-start;
+    position: relative;
+    z-index: 4;
+    padding-top:2.9rem;
+
+    & .meet_item_shadow{
+      box-shadow: $box_sd2;
+      position: relative;
+      z-index: 999
+    }
+    & .card{
+        background: #fff;
+        @extend %area_base2;
+        display: flex;
+        margin:0 px2rem(90) px2rem(70) px2rem(90);
+        padding:0;
+        flex-direction: column;
+        justify-content:center;
+    }
+     & .meet_item_line{
+         align-self: stretch;
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: center;
+         padding:px2rem(35) 0;
+
+         & .item-inner{
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: flex-start;
+             margin-left:px2rem(25);
+
+             & .meet_menu_t{
+                 font-size: $f32;
+                 margin-bottom:px2rem(20);
+                 color:$fcolor_default;
+                 display: block;
+             }
+             & .meet_menu_n{
+                font-size: $f28;
+                color:$black_gray;
+                display: block;
+             }
+         }
+     }
+
+    & .wx_code{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom:px2rem(80);
+        left:0;
+        z-index:1;
+        & .icon-noRoomBg{
+            width:px2rem(380);
+            height:px2rem(300);
+            display: block;
+            //background:url(../img/myroom.png) no-repeat 0 0;
+            background:url( $icon-myroomNodata) no-repeat 0 0;
+            background-size:cover;
+          }
+    }
+}
+.meet-marTop{
+    margin-top:px2rem(165);
+    
+}
+.content-block-title{
+    padding:0 0 px2rem(20) px2rem(22);
+   & .block-title-text{
+        font-size:$f28;
+        line-height:px2rem(28);
+    }
+}
+
+
+@include clearFn('.item-title');
+

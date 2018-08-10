@@ -1,0 +1,137 @@
+
+/* === Cards === */
+//conferreces list icon
+.icon-card-status-on,.icon-card-status-off{
+    width:px2rem(24);
+    height:px2rem(24);
+    display: block;
+    background: url(../img/icon/label_g.png) no-repeat 0 0;
+    background-size:contain;
+}
+.icon-card-status-off{
+    background: url(../img/icon/label_b.png) no-repeat 0 0;
+    background-size:contain
+}
+
+
+
+//conferreces top icon
+.iconBase{
+    content:'';
+    width:px2rem(48);
+    height:px2rem(48);
+}
+.icon-nav-rank:before {
+    @extend .iconBase;
+    //background:url(../img/icon/icon_mymeeting.png) no-repeat;
+    background:url($icon_mymeeting) no-repeat;
+    background-size: cover;
+}
+.icon-nav-invitefriend:before{
+    @extend .iconBase;
+    //background: url(../img/icon/icon_order.png) no-repeat;
+    background: url($icon_order) no-repeat;
+    background-size: cover;
+}
+.icon-suffix:before{
+    content:'';
+    width:100%;
+    height:100%;
+    background: url(../img/icon/arrow.png) no-repeat;
+    background-size: cover;
+}
+//conferreces home icon
+@mixin icon-meet{
+    border:solid #f4f8ff px2rem(56);
+    height: 0;
+    width:0;
+    background: #f4f8ff;
+    background: green;
+    display: block;
+    position: relative;
+    border-radius: 50%;
+}
+%iconBase2 {
+    content:'';
+    width:px2rem(50);
+    height:px2rem(50);
+    display: block;
+    position: absolute;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.icon-meet-my,.icon-meet-order{
+    @include icon-meet;
+    margin-left:.65rem
+}
+.icon-meet-my:before{
+    @extend %iconBase2;
+    background: url(../img/icon/icon_mymeeting.png) no-repeat;
+    background-size:contain;
+
+}
+.icon-meet-order:before{
+    @extend %iconBase2;
+    background:url(../img/icon/icon_order.png) no-repeat;
+    background-size:contain;
+
+}
+
+//conferreces 下拉刷新 icon
+.icon-reload{
+    width:14px;
+    height:14px;
+    display: inline-block;
+}
+.icon-reload:after{
+    content: "\2193";
+    color: #a3a3a3;
+    font-size:14px;
+    font-weight: 700;
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+
+
+//分享
+@mixin iconBase3 {
+    width:px2rem(65);
+    height:px2rem(65);
+    display:block;
+    background-size: cover;
+    position: absolute;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin-top:-0.2rem
+}
+.icon-f-share{
+    background: url(../img/icon/toolbar_icon_share.png) no-repeat; 
+    @include iconBase3;
+}
+.icon-f-manage{
+    background: url(../img/icon/toolbar_icon_magage.png) no-repeat 0 0;
+    @include iconBase3;
+}
+.icon-f-close{
+    background: url(../img/icon/toolbar_icon_close.png) no-repeat 0 0;
+    @include iconBase3;
+}
+.icon-f-edit{
+    background: url(../img/icon/toolbar_icon_edit.png) no-repeat 0 0;
+    @include iconBase3;
+}
+.icon-f-delete{
+    background: url(../img/icon/toolbar_icon_delete.png) no-repeat 0 0;
+    @include iconBase3;
+}
+
+
+

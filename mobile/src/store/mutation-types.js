@@ -1,0 +1,3 @@
+export const ROUTER_QUERY = 'ROUTER_QUERY'
+export const SET_CHECKLIST = 'SET_CHECKLIST'
+export const COF_DESCRIPTION = 'COF_DESCRIPTION'

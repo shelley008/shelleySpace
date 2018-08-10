@@ -1,0 +1,110 @@
+
+.header{
+    z-index:1330;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    height:px2rem(100) !important;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    background:$bgColor_default; 
+
+    & .header-title{
+        position: absolute;
+        display: block;
+        width: 100%;
+        padding:0;
+        margin:0;
+        height:1.3333333rem;
+        line-height:1.3333333rem;
+        text-align: center;
+        white-space: nowrap;
+        font-size:.48rem;
+        color:$fcolor_default;
+        font-weight:bold;
+    }
+    & .icon {
+        z-index:666;
+        font-size:px2rem(40);
+        color:#313131 !important                                                             ;
+        display: inline-block;
+      } 
+      & .icon-left{
+        width:px2rem(60) !important;
+        display: inline-block;
+        text-decoration: none !important
+    }
+    & .leftIcon{
+       // height:px2rem(40) !important;
+        overflow: hidden;
+        padding:0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        border:0 !important;
+        padding-left:px2rem(18);
+        padding-right:px2rem(30);
+    }
+}
+
+//footer
+.footer-wrapper{
+   @include fix-bottom;
+   height:px2rem(98) !important;
+   background: #ffffff;
+   display: flex;
+   border-top:1px solid #ccc;
+   box-shadow:$box_sd3;
+   z-index: 101;
+   & .footer-menu{
+       flex: 1;
+       display: flex;
+       justify-content: stretch;
+       align-items: center;
+       position: relative;
+       z-index: 106;
+       & li{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-self: stretch;
+            align-items: center;
+            margin:0 1px;
+            font-size:$f22;
+            line-height:px2rem(24);
+            color: $black_gray;
+            position: relative;
+            padding-top:px2rem(52);
+       }
+   }
+
+   & .footer-entry{
+        position: relative;
+        z-index: 111;
+        flex: 1;
+        background: $fcolor_blue;
+        color:#fff;
+        font-size:$f32;
+        display: flex;
+        align-items: center;
+        justify-content: center
+   }
+}
+
+
+.x-size-foot:after{
+    position:fixed;
+    content:' ';
+    width: 100%;
+    background:#fff;
+    height: 20px;
+    display: block;
+    z-index: 100;
+    left: 0;
+    bottom:0;
+}

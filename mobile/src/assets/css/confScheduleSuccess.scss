@@ -1,0 +1,77 @@
+.confScheduleSuccess_wrap{
+    position: fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+    z-index: 9;
+    background:$bgColor_default;
+    & .success_body{
+        display: flex;
+        margin-top:px2rem(100);
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        & .success_title{
+            flex:0.8;
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            & h3{
+                font-size:$f36;
+                min-height:px2rem(60); 
+                // line-height:px2rem(60);
+                text-align: center;
+                color:$fcolor_default;
+            }
+            & .success_icon{
+                width: px2rem(134);
+                height: px2rem(134);
+                //background: url(../img/icon/image_done.png) no-repeat 0 0;
+                background: url($icon-success) no-repeat 0 0;
+                background-size: cover;
+                display: block
+            }
+        }
+       
+
+        & .success_msg{
+            background:#fff;
+            margin:0 px2rem(20);
+            padding:px2rem(30) px2rem(20) px2rem(30) px2rem(60);
+            border-radius:$radius-default;
+            
+
+            & .success_msg_item{
+               display: flex;
+               flex-direction: row;
+               font-size:$f32;
+               line-height:px2rem(34);
+               padding:px2rem(20) 0;
+               & span{
+                  width: px2rem(130);
+                  white-space: nowrap;
+                  color:#aaaaaa;
+                  text-align: right;
+                  margin-right: px2rem(20);
+               }
+               & h4{
+                   font-size: px2rem(32);
+                   flex: 1;
+               }
+            }
+        }
+        .enLabelWidth{
+            & .success_msg_item span{
+                width:px2rem(160) !important;
+            }
+        }
+        & .success_share{
+            flex: 1;
+            
+        }
+
+    }
+}

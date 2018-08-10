@@ -1,0 +1,83 @@
+.share-content {
+    width: 100%;
+    text-align: center;
+    margin-top:px2rem(130);
+}
+$color-green:#28c983;
+$color-yellow:#ff834c;
+$color-blue:#709fff;
+$iconBg:px2rem(110);
+$iconImg:px2rem(75);
+@mixin icon-box {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+@mixin iconImgCom {
+    display: block;
+    width: $iconImg;
+    height: $iconImg;
+    background-size: cover;
+    position: absolute;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+
+.icon-list {
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  margin:px2rem(30) auto 0 auto;
+  font-size:$f28;
+  
+  li{
+    flex:1;
+    .icon-img{
+      @include icon-box();
+      width: $iconBg;
+      height: $iconBg;
+      line-height: $iconBg;
+      border-radius:$radius-default;
+      position: relative;
+    }
+    .icon-share{
+        background:#14c905
+    }
+    .icon-email{
+        background:#709fff
+    }
+    .icon-url{
+      background:#29c983
+    }
+    .icon-info{
+        background:#ff834c
+    }
+    .icon-img-share{
+      background:url(../img/invite_0.png) no-repeat center center;
+      @include iconImgCom;
+    }
+    .icon-img-green{
+      background: url(../img/invite_1.png) no-repeat center center;
+      @include iconImgCom;
+    }
+    .icon-img-yellow{
+      background: url(../img/invite_2.png) no-repeat center center;
+      @include iconImgCom;
+    }
+    .icon-img-blue{
+      background: url(../img/invite_4.png) no-repeat center center;
+      @include iconImgCom;
+    }
+    .icon-name{
+      height:px2rem(65);
+      line-height: px2rem(32);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

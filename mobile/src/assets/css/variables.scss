@@ -1,0 +1,488 @@
+/* === rem === */
+$baseFontSize:75;
+html {
+  font-size: $baseFontSize;
+}
+@function px2rem($px) {
+    @return ($px / $baseFontSize ) * 1rem;
+}
+
+//prevent scroll
+.preventOverflowX{
+    overflow-x:hidden
+}
+.preventOverflowXY{
+    overflow-x:hidden;
+    overflow-Y:hidden
+}
+
+
+/* === 颜色 === */
+//default font color
+$fcolor_default:#313131;
+//default background color
+$bgColor_default:#f7f7f7;
+
+//$fcolor_blue:#2683ff;
+$fcolor_blue:#4381ff;
+$fcolor_blue2:#5280f7;
+
+$black_gray:#919191;
+$black_gray2:#c1c1c1;
+$black_default:#313131;
+
+
+
+/* === 边距 === */
+//容器内边距
+$in_wrapper:px2rem(20);
+//页面下边距
+.page-bottom{
+    padding-bottom:px2rem(40);
+    padding-top:px2rem(40);
+}
+//顶部边距
+.topMar{padding-top:px2rem(100)};
+$topMarDefault:px2rem(100);
+
+/* === font size default === */
+$f36:px2rem(36);
+$f34:px2rem(34);
+$f32:px2rem(32);
+$f30:px2rem(30);
+$f28:px2rem(28);
+$f22:px2rem(22);
+
+
+/* === shadow === */
+$box_sd:0 0.0.002rem 0.003rem 0.004rem rgba(0,0,0,0.05 );
+$box_sd2:0 0 0.106rem 0.13rem rgba(61, 61, 61, 0.043);
+$box_sd3:0 px2rem(1) px2rem(20) px2rem(10) rgba(134, 134, 134, 0.1);
+
+
+//align center
+@mixin elePosition{
+    position: absolute;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(0,-50%);
+    -moz-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    display: block;
+}
+@mixin elePosition2{
+    position: absolute;
+    left:50%;
+    top:43%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    display: block;
+}
+
+
+/* === mixin === */
+//clear float
+@mixin clearfloat{
+    content:'\0020';
+    clear:both;
+    display: table;
+} 
+
+@mixin clearFn($selector) {
+    #{$selector}:after,#{$selector}:before{
+        content:'\0020';
+        clear:both;
+        display: table;
+    }
+}
+
+/* === common base === */
+%main_base{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding:px2rem(10);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    background:$bgColor_default; 
+}
+
+
+//image
+$radius-default:px2rem(8);
+%area_base1{
+    background:#fff;
+    border-radius:$radius-default;
+    
+}
+//add shadow
+%area_base2{
+    @extend %area_base1;
+    box-shadow:$box_sd
+}
+
+//line style
+.wrapper-line{
+    @extend %area_base1;
+    padding:$in_wrapper px2rem(30);
+    margin-bottom:px2rem(20);
+}
+//label
+%label-lineH {
+  line-height: px2rem(44) !important
+}
+
+%label-wraper{
+    width:px2rem(130);
+    font-size:$f32 !important;
+}
+
+.mint-cell-title{
+    color:$black_gray;
+    padding-top:px2rem(2);
+}
+.mint-cell-value{
+    font-size:$f32;
+    padding:0;
+    padding-left:10px;
+    padding-right:10px;
+    margin:0;
+    color:$fcolor_default;
+}
+
+
+/* === title === */
+.share-title {
+   position: relative;
+   height:$f30;
+   font-size:$f28;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   margin:0 $in_wrapper 0.6rem $in_wrapper;
+   min-height: px2rem(32);
+
+   &:before{
+    border-top:1px solid #e1e1e1;
+    content:'';
+    background: #e1e1e1;
+    display: block;
+    width:100%;
+    top:52%;
+    position: absolute;;
+    z-index:88;
+   }
+
+   & span{
+       background: $bgColor_default;
+       z-index:89;
+       position: relative;
+       display: inline-block;
+       padding:0 $in_wrapper;
+       font-size:$f28;
+       align-self: center;
+       line-height: px2rem(32)
+   }
+
+}
+
+
+
+
+/* === control === */
+.item-barContainer{
+    @extend %area_base1;
+    margin:$in_wrapper 0;
+    padding:$in_wrapper;
+
+    & .item-bar-line{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom:1px solid #dbdbdb;
+      padding:$in_wrapper 0;
+
+      & .bar-label{
+         font-size:$f32;
+         flex: 1;
+         color:$black_default;
+      }
+    }
+
+    & .item-bar-line:last-child{
+      border-width:0
+   }
+}
+
+
+
+/* === layout footer === */
+@mixin fix-bottom{
+    position: fixed;
+    left: 0;
+    bottom:0;
+    width: 100%;
+}
+
+
+
+/* === default button === */
+%btn_base {
+    font-size:$f32;
+    line-height:px2rem(98);
+    height:px2rem(98);
+    text-align: center;
+    background: $fcolor_blue;
+    color: #fff;
+    width:100%;
+}
+
+.btn_blue_default,.btn_blue_straight{
+    @extend %btn_base
+}
+.btn_blue_default{
+    border-radius:$radius-default;
+}
+.btn_blue_straight{
+   position: relative;
+   z-index: 110
+}
+
+/* === 会议 头像size1 === */
+%userHeader {
+    width:px2rem(56);
+    height:px2rem(56);
+  }
+  
+/* === 头像size2 === */
+@mixin head-size{
+    width:px2rem(98);
+    height:px2rem(98);
+}
+
+@mixin btn-addBase{
+    @include head-size;
+    text-align: center;
+    display: inline-block;
+    overflow:hidden;
+    border-radius: 50%;
+    background: #ebf2ff;
+    color:$fcolor_blue;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+/* === 默认头像大小 === */
+.img-head-default {
+    @include head-size;
+    border-radius: 50%;
+    display: block;
+    margin-bottom:px2rem(10);
+}
+
+
+//头像列表
+.userHeadWrapper{
+    & .userList-body{
+        position: relative;
+        float: left;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width:20%;
+        overflow: hidden;
+        margin:0 0 px2rem(15) 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        & .user-item-img{
+        }
+        & .user-item-title{
+           width: 100%;
+        }
+        & .user-item-name{
+            font-size:$f28;
+            line-height:px2rem(32);
+            color:$black_gray
+        }
+        & .icon-del{
+            width:px2rem(30);
+            height:px2rem(30);
+            line-height:px2rem(25);
+            border:px2rem(1) solid #fff;
+            border-radius: 50%;
+            background: red;
+            color:#fff;
+            font-size:$f30;
+            font-style: normal;
+            display: inline-block;
+            z-index:3;
+            position: absolute;
+            left:75%;
+            top:13%;
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+            display: block;
+        }
+    }
+}
+
+.left-add-box{
+    float:left;
+    width:20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-addbar{
+    float: left;
+    height:px2rem(80);
+    width:px2rem(80);
+    background:#ecf2ff;
+    border-radius: 50%;
+    position: relative;
+    &:after{
+      content:'+';
+      font-size:px2rem(50);
+      @include elePosition2;
+      color:#4381ff;
+      
+    }
+}
+
+.icon-add{
+   @extend .btn-addbar;
+   @include btn-addBase;
+}
+
+// list header
+.user-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.user-head{
+    width: px2rem(80);
+    height: px2rem(80);
+    background: #ccc;
+    border-radius: 50%;
+    overflow: hidden;
+    & img{
+        width: px2rem(80);
+        height: px2rem(80);
+    }
+}
+.user-name{
+    font-size:$f32;
+    margin-left: px2rem(20);
+    color:$fcolor_default;
+ }
+
+ 
+//pop layout
+.popShareWrapper{
+    height:px2rem(462) !important;
+    width: 100%;
+    width: 100%;
+    padding-top:px2rem(50);
+    background:#fff;
+    & .share-content{
+       margin-top:0 !important;
+    }
+    & .cancleWrap{
+        font-size: px2rem(32);
+        text-align: center;
+        padding-top:  px2rem(20);
+        margin: px2rem(50) px2rem(20) 0 px2rem(20);
+        color: #4381ff;
+        border-top:1px solid #e1e1e1;
+        line-height: px2rem(60);
+    }
+    & .share-title{
+        margin-bottom:px2rem(60);
+        height: px2rem(34);
+    }
+    & .share-title span{
+        background: #fff;
+        min-height: px2rem(32);
+        line-height: px2rem(32);
+        color: #919191
+    }
+}
+
+//pop layout2
+.popPassWordWrap{
+    background:$bgColor_default; 
+    border-radius:$radius-default;
+
+    & .pop-head{
+        font-size:$f32;
+        height:px2rem(80);
+        line-height: px2rem(80);
+        text-align: center;
+    }
+    & .pop-body{
+        padding:px2rem(70) px2rem(30);
+        background:#fff;
+        font-size:$f32
+    }
+    & .pop-foot{
+        font-size:$f32;
+        height:px2rem(100);
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+
+    & .pop-btn-default{
+        height: px2rem(60);
+        padding:0 px2rem(70);
+        margin:0 px2rem(20);
+        font-size:$f32
+    }
+    & .pop-btn-blue{
+        background:#4381ff !important;
+    }
+    & .pop-btn-gray{
+        background:#fff !important;
+    }
+
+    & .pop-input{
+        height: px2rem(70);
+        line-height:  px2rem(70);
+        display: flex;
+        justify-content: center;
+        align-items: center
+       
+    }
+}
+
+.input-base{
+    font-size:$f34;
+    color: #000;
+}
+
+
+* {
+    -webkit-touch-callout:none;  /*系统默认菜单被禁用*/   
+    -webkit-user-select:none; /*webkit浏览器*/   
+    -khtml-user-select:none; /*早期浏览器*/   
+    -moz-user-select:none;/*火狐*/   
+    -ms-user-select:none; /*IE10*/   
+    user-select:none;   
+}
+input,textarea {      
+    -webkit-user-select:auto; /*webkit浏览器*/     
+}  
+
+.letter2em{
+    letter-spacing: 2em;
+}

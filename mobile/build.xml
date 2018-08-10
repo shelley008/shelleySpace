@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<project name="mobile" default="deploy" basedir=".">
+	<property name="tomcat.dir" value="${basedir}/../../../tools/apache-tomcat" />
+	<property name="dist.dir" value="${basedir}/dist" />
+	<condition property="npm" value="npm.cmd" else="npm">
+        <os family="windows" />
+    </condition>
+
+	<target name="deploy" depends="init, clean">
+		<echo>Compile mobile</echo>
+	    <exec executable="${npm}" failonerror="true" failifexecutionfails="true" resultproperty="node.exec.result">
+            <arg value="run" />
+			<arg value="build" />
+	    </exec>
+
+		<echo>Copy to tomcat</echo>
+		<copy todir="${tomcat.dir}/webapps/ROOT/mobile">
+			<fileset dir = "${dist.dir}"/>
+		</copy>
+
+	</target>
+
+	<target name="clean" >
+		<delete dir="${dist.dir}" />
+		<delete dir="${tomcat.dir}/webapps/ROOT/mobile" />
+	</target>
+
+	<target name="init" >
+		<echo>Install node_modules</echo>
+		<exec executable="${npm}" failonerror="false" failifexecutionfails="false" resultproperty="node.exec.result">
+            <arg value="install" />
+	    </exec>
+        <fail message="Node.js is required to run this part of the build.  Install from http://nodejs.org/">
+            <condition>
+                <not>
+                    <equals arg1="${node.exec.result}" arg2="0" />
+                </not>
+            </condition>
+        </fail>
+	</target>
+
+</project>
+

@@ -1,0 +1,220 @@
+
+$horizontal_screen_ratio :0.54;
+@function px2rem4confC($px) {
+  @return ($px * $horizontal_screen_ratio / $baseFontSize ) * 1rem;
+}
+
+$confControl_topMar:px2rem(88);
+
+@mixin btn-icon-base{
+    content: "" !important;
+    display:block !important;
+    width:px2rem4confC(36) !important;
+    height:px2rem4confC(36) !important;
+    margin-right:px2rem4confC(5);
+
+}
+
+.closeWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:70%;
+    & .closeWrapper-tip{
+        font-size:px2rem4confC(70);
+        color: #979797;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        & .icon{
+            font-size: px2rem(150) !important;
+            margin-bottom:px2rem(10) !important
+        }
+    }
+}
+
+.confControl-wrap{
+    background:#fff;
+    height:100%;
+    & .user-head{
+        width: px2rem4confC(100);
+        height: px2rem4confC(100);
+        & img{
+            width: px2rem4confC(100);
+            height: px2rem4confC(100);
+        }
+    }
+    & .user-name{
+        font-size: px2rem4confC(44);
+        margin-left: px2rem4confC(30);
+        color:#313131
+     }
+
+
+     & .btn-conf-eidt{
+        display: inline-block;
+        height:px2rem4confC(90);
+        line-height:px2rem4confC(90);
+        border-radius: px2rem4confC(8);
+        width:px2rem4confC(200);
+        text-align: center;
+        border:1px solid #acc2fa;
+        background: #d9e4fd;
+        color: #5280f7;
+        font-size: px2rem4confC(36);
+        white-space:nowrap
+    }
+    & .confControl-foot{
+        position: fixed;
+        left:0;
+        bottom:0;
+        z-index: 999;
+        width: 100%;
+        background:$bgColor_default;
+        height: px2rem4confC(150);
+        overflow:hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center !important;
+
+        & .btn-conf-base{
+            margin:0 px2rem4confC(20);
+            background: #4381ff !important;
+            color:#fff !important;
+            font-size: px2rem4confC(50);
+            display: inline-block;
+            width: px2rem4confC(390);
+            height: px2rem4confC(100);
+            line-height: px2rem4confC(100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: px2rem4confC(8);
+
+            & i.icon-prohibit{
+                @include btn-icon-base;
+                background: url(../img/icon/btn_mute.png) no-repeat 0 0;
+                background-size: cover;
+            }
+            & i.icon-prohibit-cancle{
+                @include btn-icon-base;
+                background: url(../img/icon/btn_unmute.png) no-repeat 0 0;
+                background-size: cover;
+            }
+            & i.icon-caption{
+                @include btn-icon-base;
+                background: url(../img/icon/nav_arrow.png) no-repeat 0 0;
+                background-size: cover;
+            }
+            & i.icon-inviteUser{
+                @include btn-icon-base;
+                background: url(../img/icon/btn_invite.png) no-repeat 0 0;
+                background-size: cover;
+            }
+        }
+    }
+
+    & .yd-cell-box{
+        margin-bottom:0
+    }
+}
+
+@mixin centerAlign{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.confControl-body{
+    overflow-y: scroll;
+    & .yd-cell-item{
+        padding:0 px2rem4confC(20);
+    }
+    & .bar-edit, & .bar-default{
+        position: relative;
+        z-index: 66;
+        @include centerAlign;
+        & i{
+           margin:0 0 0 px2rem4confC(30);
+        }
+    }
+    & .yd-cell:after{
+        border-bottom: 0 !important
+    }
+}
+
+.confControl-head{
+    background:$bgColor_default !important;
+    height:px2rem4confC(150) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left:0;
+    top:0;
+    width: 100%;
+    position: fixed;
+
+    & .icon-xiangzuo1{
+        display: flex;
+        justify-content:  flex-start;
+        align-items: center
+    }
+    & .icon-xiangzuo1:before{
+        font-size:px2rem4confC(80) !important;
+        color:#313131
+    }
+    & .yd-navbar-center{
+       font-size:px2rem4confC(62) !important;
+   }
+}
+
+.editStatus{
+    background: #f1f1f1
+}
+
+//confControl
+.iconConf{
+    display:inline-block;
+    content: '';
+    width:px2rem4confC(60);
+    height:px2rem4confC(60);
+}
+
+.iconConfStar{
+    background: url(../img/icon/icon_star.png) no-repeat 0 0;
+    background-size: cover;
+}
+.iconConfVote{
+    background: url(../img/icon/icon_foucesvideo.png) no-repeat 0 0;
+    background-size: cover;
+}
+
+.iconConfSound{
+    background: url(../img/icon/icon_mute.png) no-repeat 0 0;
+    background-size: cover;
+}
+.iconConfSoundOff{
+    background: url(../img/icon/icon_muteoff.png) no-repeat 0 0;
+    background-size: cover;
+}
+
+
+.yd-navbar:after {
+    border-bottom:0 !important;
+}
+.yd-navbar-center-title{
+    font-size:$f34 !important;
+}
+
+.icon-jiahao2fill{
+    font-size:$f28;
+    color:#4381ff;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.icon-jiahao2fill:before{
+    font-size: px2rem(44) !important;
+    padding-right:px2rem(10)
+}
+

@@ -1,0 +1,131 @@
+.popLayout{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:1550;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & span{
+        font-size:$f32;
+        background:rgba(0, 0, 0, 0.7);
+        color:#fff;
+        padding:$in_wrapper;
+        border-radius:$radius-default;
+    }
+}
+
+.myroomWrappper {
+    padding-top:px2rem(30);
+    & .item-barContainer{
+        margin:0 $in_wrapper;
+    }
+    & .center_code {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        & .mymeet_number{
+            text-align: center;
+            margin-bottom:px2rem(70);
+            & h4{
+               font-size:$f32;
+               color:$black_gray2;
+            }
+            & p{
+                font-size:px2rem(56);
+                color: $fcolor_blue;
+                margin-top:px2rem(30);
+               
+            }
+        }
+        & .item-inner{
+            margin:0 px2rem(80);
+            & .changePassword{
+                text-align: right;
+                font-size:$f28;
+                height:px2rem(100);
+                line-height:px2rem(100);
+                color:$fcolor_blue;
+               
+            }
+        }
+      }
+}
+
+
+.content-noInviteWrappper{
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background:$bgColor_default;
+    
+    & h3 {
+        font-size:$f32;
+        text-align: center;
+        line-height:px2rem(60);
+        color:#919191;
+    }
+    & .icon-pleaseOpen{
+        width:px2rem(260);
+        height:px2rem(260);
+        margin-bottom:px2rem(30);
+        display: block;
+        background:url($icon-pleaseOpen) no-repeat 0 0;
+        background-size:cover;
+      }
+}
+
+.bar-switch{
+    margin-right:px2rem(15);
+        & .yd-switch {
+            position: relative;
+            z-index: 10;
+            display: block;
+            width:px2rem(90) !important;
+            height:px2rem(50) !important;
+            left: 0;
+            border: 1px solid #dfdfdf;
+            border-radius: 16px;
+            background-color: #dfdfdf;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        & .yd-switch:after {
+            width:px2rem(50) !important;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,.4);
+        }
+        & .yd-switch:before {
+            width: px2rem(45) !important;
+            background-color: #fdfdfd;
+        }
+
+        & .yd-switch:after,& .yd-switch:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: px2rem(45) !important;
+            border-radius:20px !important;
+            -webkit-transition: -webkit-transform .3s;
+            transition: -webkit-transform .3s;
+            transition: transform .3s;
+            transition: transform .3s,-webkit-transform .3s;
+        }
+
+
+}
+
+  

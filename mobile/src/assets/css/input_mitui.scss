@@ -1,0 +1,49 @@
+
+
+
+//输入框样式强制修改 !important;
+.mint-cell {
+    padding:0 !important;
+    background-image:none !important;
+    border-bottom:1px solid #f1f1f1;
+    margin:0 .1333333rem;
+    height:1rem;
+
+}
+.firstInputWrapper{
+    padding-top:0  !important;
+    padding-bottom:0  !important;
+}
+.wrapper-line .mint-cell:last-child,.firstInputWrapper .mint-cell{
+    border-bottom:0 !important;
+}
+
+.mint-cell-wrapper{
+    padding:0 !important;
+    margin:0!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:none !important
+}
+
+.mint-cell-title{
+    width:1.93rem !important;
+    font-size:$f28
+ }
+.mint-cell-text{
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.mint-cell-value{
+    color:#000 !important
+}
+
+
+.bar-switch{
+    width:1.0667rem !important;
+    height:0.587rem !important;
+    background:#fff;
+}
+
